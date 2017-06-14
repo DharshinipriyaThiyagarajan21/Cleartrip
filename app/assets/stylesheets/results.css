@@ -1,0 +1,328 @@
+.serviceType a {
+  padding: 0px 10px;
+  border-right: 1px solid #ddd;
+  display: inline-block;
+}
+
+.serviceType a:first-child {
+  border-left: 1px solid #ddd;
+}
+
+.serviceType img {
+  width: 32px;
+  height: 32px;
+  margin-top: 5px;
+}
+
+.serviceType {
+  display: block;
+  -webkit-margin-before: 0em !important;
+  -webkit-margin-after: 0em !important;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  -webkit-padding-start: 40px;
+  line-height: 24px;
+}
+
+/* navbar ends here */
+
+/* Side filter starts here */
+
+.stops {
+  font-size: 11px;
+  color: #333 !important; 
+}
+
+.stops ul li.active {
+  background-color: #333 !important;
+  color: #fff;
+}
+
+.stops ul li:focus {
+  outline: none !important;
+}
+
+.stops ul li{
+  margin: 0.5em;
+  display: inline-block;
+  padding: 0.3em 1em !important;
+  background-color: #fff;
+  line-height: 2em;
+  border:1px solid #ddd;
+  margin-right: -11px;
+}
+
+.stops ul li:first-child {
+  border-top-left-radius: 0.5em;
+  border-bottom-left-radius: 0.5em;
+  border-top-right-radius: 0em;
+  border-bottom-right-radius: 0em;
+  border:1px solid #ddd;
+}
+
+.stops ul li:last-child {
+  border-top-right-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
+  border-top-left-radius: 0em;
+  border-bottom-left-radius: 0em;
+  border:1px solid #ddd;
+}
+
+.side-filter ul li {
+  padding: 0.3em;
+  border-bottom: 1px solid #ddd;
+}
+
+.side-filter ul {
+  -webkit-margin-before: 0em !important;
+  -webkit-margin-after: 0em !important;
+}
+
+.side-filter label {
+  font-size: 12px;
+  color: #666;
+  font-weight: bold;
+}
+
+.side-filter {
+  padding: 0 !important;
+}
+
+.flightsList {
+  background: #fff;
+  border-right: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+  -webkit-box-shadow: -2px 0 2px #eee, 2px 0 2px #eee;
+  box-shadow: -2px 0 2px #eee, 2px 0 2px #eee;
+}
+
+.departTime {
+  margin: 1em 0;
+}
+
+.departTime ul li.active {
+  background-color: #333 !important;
+  color: #fff;
+}
+
+.departTime ul li:focus {
+  outline: none !important;
+}
+
+.departTime ul li{
+  padding: 0.3em 0.5em !important;
+  background-color: #fff;
+  font-size: 11px;
+  border:1px solid #ddd;
+  line-height: 2em;
+  margin-bottom: -2px;
+}
+
+.departTime ul li:first-child {
+  border-radius: 0.5em;
+  border-bottom-left-radius: 0em !important;
+  border-bottom-right-radius: 0em !important;
+  border:1px solid #ddd;
+}
+
+.departTime ul li:last-child {
+  border-radius: 0.5em;
+  border-top-left-radius: 0em !important;
+  border-top-right-radius: 0em !important;
+  border:1px solid #ddd;
+}
+
+.stops-head img  {
+  width: 12px;
+  height: 12px;
+  margin-right: 5px;
+}
+.stops-head:focus {
+  outline: none !important;
+}
+
+.airline {
+  font-size: 12px;
+}
+
+.airline ul li {
+  border:none !important;
+  padding: 0.2em !important;
+}
+
+.airline ul li:first-child {
+  border-bottom: 1px solid #ddd !important;
+}
+
+.priceRange {
+  font-size: 11px;
+}
+
+.priceRange .rzslider .rz-pointer:after {
+  top: 7px !important;
+  left: 7px !important;
+  width: 6px!important;
+  height: 6px!important;
+}
+
+.priceRange .rzslider .rz-pointer {
+  top: -9px !important;
+  width: 20px !important;
+  height: 20px !important;
+  background-color: #106CC8 !important;
+}
+
+.priceRange .rzslider .rz-selection {
+  background-color: #106CC8 !important;
+}
+
+.airline [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+  position: relative !important; 
+  left: 0px !important; 
+  opacity: 1 !important; 
+}
+
+.airline md-checkbox .md-icon {
+  top: 3px !important;
+  left: 3px !important;
+  width: 15px !important;
+  height: 15px !important;
+}
+
+.airline md-checkbox.md-checked .md-icon:after {
+  left: 3.66667px !important;
+  top: -0.77778px !important;
+  width: 5.66667px !important;
+  height: 10.33333px !important;
+}
+
+.airline md-checkbox {
+  margin-bottom: 0px !important;
+}
+
+.airline md-checkbox.md-checked .md-icon {
+  background-color: #106CC8 !important;
+}
+
+.airline md-checkbox.md-default-theme.md-checked .md-ink-ripple, md-checkbox.md-checked .md-ink-ripple {
+  color: #106CC8 !important;
+}
+
+.rightArrow {
+  transform: rotate(-90deg);
+}
+
+#trip, #layover {
+  transform: rotate(-90deg);
+}
+
+.downArrow {
+  transform: rotate(0deg) !important;
+}
+
+/* Side filter ends here */
+
+/* Flights details starts here */
+
+.flightsList {
+  padding: 0 !important;
+}
+
+.flightsList .flights-special {
+  background-color: #ffffcc;
+  font-size: 12px;
+  line-height: 32px;
+  padding-left: 2em;
+  box-shadow: 0px 1px #fff inset;
+  text-shadow: 0px 1px rgba(255,255,255,0.7);
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+.flightsList a {
+  color: #36c;
+}
+
+.flightsList .details-head{
+  background-color: #F3F9FF;
+  font-size: 12px;
+  text-align: center;
+  line-height: 32px;
+  border-bottom: 1px solid #d3e4f5;
+  box-sizing: border-box;
+  padding: 0 2em;
+}
+
+.details-cnt {
+  margin: 0 20px;
+}
+
+.details-cnt ul {
+  text-align: center;
+  font-size: 12px;
+  -webkit-margin-before: 0em !important;
+  -webkit-margin-after: 0em !important;
+}
+
+.details-cnt .flight-detail li{
+  border-bottom: 1px solid #eee;
+  padding: 10px 0 15px 0;
+}
+
+.details-cnt .flight-detail li:last-child {
+  border-bottom:none !important;
+}
+
+.details-cnt .flight-detail .row {
+  margin-bottom: 0px !important;
+}
+
+.details-cnt .airline-name {
+  text-align: left !important;
+  padding-left: 3.2em;
+}
+
+.details-cnt .flight-offer {
+  text-align: left !important;
+  font-size: 12px;
+  color: #90724a;
+  padding: 3px 20px;
+  margin: 0;
+  background-color: #ffffeb;
+}
+
+.flight-detail .additional-info {
+  font-size: 10px;
+  color: #36c;
+  padding: 0 3.2em;
+}
+
+.stop-desc {
+  font-size: 11px;
+}
+
+.flight-desc {
+  padding: 0.2em 0;
+}
+
+.stop-desc .location {
+  padding-left: 3.2em;
+}
+
+.stop-desc .bookBtn {
+  cursor: pointer;
+  width: auto;
+  overflow: visible;
+  font-weight: 700;
+  font-size: 13px;
+  text-decoration: none;
+  text-shadow: none;
+  border: none;
+  color: #f9f9f9;
+  padding: 0.2em 0.75em 0.2em 0.75em;
+  border: solid 1px transparent;
+  border-radius: 3px;
+  background-color: #F86810;
+}
+
+/* Flights details ends here */
+

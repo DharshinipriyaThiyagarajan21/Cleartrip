@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cleartrip - Flights, Hotels, Local, Trains, Packages</title>
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+   <base href="/">
+  </head>
+
+  <body ng-app="app">
+    <%= yield %>
+  </body>
+</html>

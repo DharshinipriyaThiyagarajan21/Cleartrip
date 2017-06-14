@@ -1,0 +1,548 @@
+.navbar-section {
+  background: #f1f1f1;
+  height: 44px;
+  line-height: 45px !important;
+  color: #777;
+  position: relative;
+  border-bottom: 1px solid #ddd;
+  font-size: 13px;
+}
+
+.navbar-section .container .row {
+  margin-left: -3.25rem !important;
+  margin-bottom: 0;
+}
+
+.cleartripLogo {
+  content: " ";
+  background-image: url(../assets/cleartrip.png);
+  background-repeat: no-repeat;
+  float: left;
+  margin-top: 8px;
+  width: 129px;
+  height: 30px;
+  text-indent: -9999px;
+}
+
+.feedbackLink a {
+  color: #36c;
+  text-decoration: underline;
+}
+
+.currencyMenu strong {
+  color: #000 !important;
+}
+
+.clearfix {
+  clear: both;
+}
+
+body {
+  background: #f9f9f9;
+  overflow-y: scroll;
+}
+
+.servicesMenu {
+  margin-top: 1.75em;
+  padding: 0 !important;
+}
+
+.servicesMenu ul li img {
+  height: 24px !important;
+  padding-right: 10px;
+}
+
+.servicesMenu a {
+  color: #999 !important;
+}
+
+.servicesMenu li:last-child {
+  border-bottom-color: transparent;
+}
+
+.servicesMenu li {
+  border: 1px solid transparent;
+  border-top-color: rgba(0, 0, 0, 0.05);
+  border-right: none;
+}
+
+.servicesMenu .products {
+  -webkit-box-shadow: 0 1px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 0px rgba(0, 0, 0, 0.2);
+}
+
+.servicesMenu li:first-child {
+  border-top-color: transparent;
+}
+
+.servicesMenu li:active {
+  background-color: #eee;
+}
+
+.servicesMenu li a {
+  padding: 8px 13px;
+  font-size: 17px;
+  line-height: 24px;
+  font-weight: 300;
+  text-decoration: none;
+  text-shadow: 0px 2px #fff;
+  color: #999;
+  display: block;
+}
+
+.servicesMenu ul {
+  -webkit-margin-before: 0em !important;
+  -webkit-margin-after: 0em !important;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  -webkit-padding-start: 0px !important;
+}
+
+.mdi-size i {
+  font-size: 30px;
+  margin-top: 6px;
+}
+
+.servicesMenu li:hover a {
+  color: #000 !important;
+}
+
+.flightsApp {
+  border: 1px solid #ccc !important;
+  border-right: none !important;
+  -webkit-box-shadow: 1px 0px #fff;
+  box-shadow: 1px 0px #fff;
+  z-index: 2;
+  position: relative;
+}
+
+.flightsApp a {
+  background: #fff !important;
+  color: #000 !important;
+}
+
+.mobile {
+  border-top: 0.5px solid #999;
+}
+
+.chevron-down {
+  border-top: 5px solid #ccc;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  display: inline-block;
+  ;
+  /*margin-left: 5px;*/
+}
+
+.currencyMenu,
+.countryMenu {
+  padding: 0 !important;
+  border-left: 1px solid #ddd;
+}
+
+.profileMenu {
+  padding: 0 !important;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+}
+
+.profileMenu a {
+  padding-left: 5px;
+  color: #777 !important;
+}
+
+.currencyMenu a {
+  padding-left: 5px;
+  color: #777 !important;
+}
+
+.countryMenu a {
+  padding-left: 5px;
+  color: #777 !important;
+}
+
+.serviceContent {
+  background: #fff;
+  padding-left: 2rem !important;
+}
+
+.service-header h4 {
+  font-weight: bold;
+  margin-top: 1.25em;
+  font-size: 2.25rem;
+  margin-bottom: 10px;
+  line-height: 30px;
+}
+
+.subTitle {
+  font-size: 20px;
+  color: #999;
+  margin-bottom: 15px;
+}
+
+.categories {
+  margin: 15px 0 15px 0;
+}
+
+.categories md-radio-button .md-off,
+md-radio-button .md-on {
+  box-sizing: border-box;
+  position: absolute;
+  top: 2px !important;
+  left: 10px !important;
+  width: 15px !important;
+  height: 15px !important;
+  border-radius: 50%;
+}
+
+.categories ul li {
+  float: left;
+  padding-right: 15px;
+}
+
+[type="radio"]:not(:checked)+label {
+  padding-left: 24px !important;
+}
+
+[type="radio"]:checked+label {
+  padding-left: 24px !important;
+}
+
+.location .input-field label {
+  color: #000 !important;
+  transition: none !important;
+  font-weight: bold;
+}
+
+.pad-r {
+  padding-right: 0 !important;
+}
+
+.pad-l {
+  padding-left: 0 !important;
+}
+
+.repeat-icon i {
+  line-height: 85px;
+}
+
+.departure label {
+  color: #000 !important;
+  font-weight: bold;
+}
+
+.departure input {
+  margin: 0!important;
+  height: 2rem !important;
+}
+
+.inner-addon {
+  position: relative;
+}
+
+
+/* style icon */
+
+.inner-addon .mdi {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+  top: 25px;
+  color: #999;
+  font-size: 20px;
+}
+
+
+/* align icon */
+
+.right-addon .mdi {
+  right: 0px;
+}
+
+
+/* add padding  */
+
+.right-addon input {
+  padding-right: 30px;
+}
+
+.capacityDetails label {
+  color: #000 !important;
+  font-weight: bold;
+}
+
+.capacityDetails {
+  margin: 15px 0;
+}
+
+.capacityDetails p {
+  display: block;
+  -webkit-margin-before: -1.75em !important;
+  -webkit-margin-after: 0em !important;
+  -webkit-margin-start: 5px;
+  -webkit-margin-end: 0px;
+  font-size: 10px;
+  color: #999;
+}
+
+.moreOptions {
+  padding-top: 10px;
+  padding-bottom: 20px;
+  border-bottom: 1px dotted #ddd;
+}
+
+.moreOptions .chevron-down {
+  border-top: 5px solid #85a3e0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  display: inline-block;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.moreOptions a {
+  color: #85a3e0;
+  font-size: 13px;
+}
+
+.moreOptions a:hover {
+  text-decoration: underline;
+}
+
+.advancedOptions label {
+  color: #000 !important;
+  font-weight: bold;
+}
+
+.advancedOptions .travelClass {
+  top: -1em;
+  font-size: 13px;
+}
+
+.advancedOptions {
+  padding-top: 10px;
+}
+
+.searchBtn {
+  margin: 15px 0;
+}
+
+.searchBtn .btn {
+  font-weight: bold !important;
+  background: #EB5E07 !important;
+  font-size: 15px !important;
+  text-transform: inherit !important;
+  padding: 0 0.75em !important;
+}
+
+.deals-section {
+  margin-top: 1.5em;
+}
+
+.deals-section .card {
+  width: 18em;
+}
+
+.deals-section .card .card-title {
+  text-align: center;
+  font-weight: bold !important;
+  border-bottom: 1px dashed #bbb;
+}
+
+.deals-section .card .card-content {
+  padding: 20px !important;
+}
+
+.deals-section .carousel-item {
+  height: 150px !important;
+}
+
+.deals-section .carousel {
+  height: 200px !important;
+}
+
+.deals-section a:hover {
+  text-decoration: underline;
+  color: #36c;
+  font-size: 13px;
+}
+
+.deals-section a {
+  color: #36c;
+  font-size: 13px;
+}
+
+.deals-section a.weak {
+  color: #85a3e0;
+}
+
+.offerDescription {
+  font-size: 12px !important;
+  color: #666 !important;
+}
+
+.deals-section .slider {
+  height: 150px !important;
+}
+
+.deals-section .slides {
+  background: #fff !important;
+  height: 160px !important;
+}
+
+#home .row {
+  margin-bottom: 0px !important;
+}
+
+.rewardsUpsellBannerHome {
+  border-top: 1px solid #ccc;
+  padding: 20px 0;
+  background: #f9f9f9;
+}
+
+.rewardsUpsellBannerHome .row {
+  margin-bottom: 0px !important;
+}
+
+.rewardsUpsellBannerHome .rewardsUpsellWrapperHome {
+  padding: 10px;
+}
+
+
+/*.rewardsUpsellWrapperHome .rewardsBannerImage {
+    float: left;
+    background-repeat: no-repeat;
+    width: 258px;
+    height: 80px;
+    margin: 10px 30px 15px 70px;
+}*/
+
+.rewardsUpsellWrapperHome .rewardsBannerImage img {
+  width: 250px;
+  height: 80px;
+}
+
+.rewardsUpsellWrapperHome .upsellTextContainer {
+  padding-top: 0px;
+  padding-left: 20px;
+}
+
+.rewardsUpsellWrapperHome h4,
+.upsellWrapper h4 {
+  font-size: 26px;
+  padding-top: 22px;
+  margin: 0.412rem 0 0.912rem 0 !important;
+  line-height: 90% !important;
+}
+
+.rewardsUpsellWrapperHome h4 small {
+  font-family: Helvetica, Arial, sans-serif;
+  letter-spacing: normal;
+  font-size: 17px;
+  font-weight: 400;
+  display: block;
+  margin-top: 4px;
+  color: #000;
+}
+
+.upsellTextContainer a {
+  color: #36c;
+}
+
+.upsellTextContainer a:hover {
+  text-decoration: underline;
+}
+
+.cleartripFooter {
+  border-top: 1px solid #ccc;
+}
+
+.cleartripFooter ul li {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.cleartripFooter .row {
+  margin-bottom: 0px !important;
+}
+
+.cleartripFooter .description a {
+  font-size: 13px;
+  color: #36c;
+}
+
+.cleartripFooter .description a:hover {
+  text-decoration: underline;
+}
+
+.cleartripFooter .copyright a {
+  color: #999;
+  font-size: 12px;
+}
+
+.cleartripFooter .copyright a:hover {
+  color: #000;
+}
+
+.cleartripFooter .copyright {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.copyright ul {
+  -webkit-margin-before: 0em !important;
+  -webkit-margin-after: 0em !important;
+}
+
+.cleartripFooter ul {
+  -webkit-margin-after: 0em !important;
+}
+
+.socialNetwork .mdi {
+  font-size: 16px;
+}
+
+.socialNetwork a {
+  color: #999 !important;
+}
+
+.socialNetwork li a:hover {
+  text-decoration: none !important;
+}
+
+.socialNetwork .facebook a:hover {
+  color: #36c !important;
+}
+
+.socialNetwork .twitter a:hover {
+  color: #32CCFE !important;
+}
+
+.pad0 {
+  padding: 0px !important;
+}
+
+.otherTools {
+  padding-bottom: 30px;
+}
+
+.otherTools li {
+  font-size: 11px;
+}
+
+.otherTools a {
+  color: #ccc !important;
+}
+
+.otherTools strong {
+  color: #ccc;
+}
+
+.otherTools li a:hover {
+  color: #999 !important;
+}
+
+.otherTools ul {
+  -webkit-margin-before: 0.2em !important;
+}
+

@@ -1,0 +1,177 @@
+<div ng-controller="flightsController" ng-init="searchFlights()">
+  <section class="navbar-section">
+    <div class="container">
+      <div class="row">
+        <div class="col s4">
+          <a href="#"><span class="cleartripLogo" title="Cleartrip ">Home</span></a>
+          <ul class="serviceType">
+            <a><img src="/assets/flights(32x32).png"></a>
+            <a><img src="/assets/hotel(48x48).png"></a>
+            <a><img src="/assets/combo-box(48x48).png"></a>
+            <a><img src="/assets/trains(48x48).png"></a>
+          </ul>
+          <div class="clearfix"></div>
+        </div>
+        <div class="col s5 center">
+          <span class="feedbackLink">
+            {{data.fromLocation}} &rarr; {{data.toLocation}}
+          </span>
+        </div>
+        <div class="col s3 headerMenu">
+          <div class="col s5 currencyMenu">
+            <a href=""><strong>Currency</strong> INR <span class="chevron-down"></span></a>
+          </div>
+          <div class="col s3 countryMenu">
+            <a href="">in <span class="chevron-down"></span></a>
+          </div>
+          <div class="col s4 profileMenu">
+            <a href="">Your trips <span class="chevron-down"></span></a>
+          </div>
+          <div class="clearfix"></div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </section>
+  <div class="clearfix"></div>
+  <section class="container">
+    <div class="row">
+      <div class="col s2 side-filter">
+        <ul>
+          <li>
+            <div class="stops-head" ng-click="showDiv($event)">
+              <img src="/assets/downArrow.png" id="price">
+              <label>Price</label>
+            </div>
+            <div ng-show="showPrice" class="priceRange">
+              <rzslider rz-slider-model="priceRange.value" rz-slider-options="priceRange.options"></rzslider>
+            </div>
+          </li>
+          <li>
+            <div class="stops-head" ng-click="showDiv($event)">
+              <img src="/assets/downArrow.png" id="stops">
+              <label>Stops</label>
+            </div>
+            <div class="stops" ng-show="showStops">
+              <ul>
+                <li class="active" ng-click='stops($event)'>0 stop</li>
+                <li ng-click='stops($event)'>1 stop</li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <div class="stops-head" ng-click="showDiv($event)">
+              <img src="/assets/downArrow.png" id="departTime">
+              <label>Departure time</label>
+            </div>
+            <div class="departTime" ng-show="showDepart">
+              <ul>
+                <li class="active" ng-click='stops($event)'>Early Morning <span class="right">12am - 8am</span></li>
+                <li ng-click='stops($event)'>Morning <span class="right">8am - 12pm</span></li>
+                <li ng-click='stops($event)'>Mid-Day <span class="right">12pm - 4pm</span></li>
+                <li ng-click='stops($event)'>Evening <span class="right">4pm - 8pm</span></li>
+                <li ng-click='stops($event)'>Night <span class="right">8pm - 12am</span></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <div class="stops-head" ng-click="showDiv($event)">
+              <img src="/assets/downArrow.png" id="airline">
+              <label>Airlines</label>
+            </div>
+            <div class="airline" ng-show="showAirline">
+              <ul>
+                <li>
+                  <md-checkbox class="md-checked">Show multi-airline itineraries</md-checkbox>
+                </li>
+                <li ng-repeat="airline in airlines">
+                  <md-checkbox class="md-checked">{{airline.name}}</md-checkbox> <span class="right">Rs.{{airline.price}}</span>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <div class="stops-head" ng-click="showDiv($event)">
+              <img src="/assets/downArrow.png" id="trip">
+              <label>Trip duration</label>
+            </div>
+            <div class="priceRange" id="tripDuration" >
+              <rzslider rz-slider-model="tripDuration.minValue" rz-slider-high="tripDuration.maxValue" rz-slider-options="tripDuration.options"></rzslider>
+            </div>
+          </li>
+          <li>
+            <div class="stops-head" ng-click="showDiv($event)">
+              <img src="/assets/downArrow.png" id="layover">
+              <label>Layover duration</label>
+            </div>
+            <div class="priceRange" id="layoverDuration">
+              <rzslider rz-slider-model="layoverDuration.minValue"
+              rz-slider-high="layoverDuration.maxValue" rz-slider-options="layoverDuration.options"></rzslider>
+
+              <div ui-slider min="0" max="200" ng-model="demoVals.sliderExample1"></div>
+            </div>
+          </li>
+        </ul>
+        <div class="clearfix"></div>
+      </div>
+      <div class="col s8 flightsList"> 
+        <div class="flights-special">
+          <a><strong>Flights special:</strong> Upto Rs.3,000 Cashback on Domestic Flights. Use coupon PAYLESS. </a>
+        </div>
+        <div class="details-head">
+          <div class="col s2"><a>Airline</a></div>
+          <div class="col s2"><a>Depart</a></div>
+          <div class="col s2"></div>
+          <div class="col s2"><a>Duration</a></div>
+          <div class="col s2 offset-s2"><a>Price</a></div>
+          <div class="clearfix"></div>
+        </div>
+        <div class="details-cnt">
+          <!-- <ul ng-repeat="obj in flightDetails">
+            <div class="flight-offer">Get an wallet cashback upto Rs 1500. Use coupon: PAYLESS <a>Know more</a></div>
+            <li class="col s2 airline-name">{{obj.flight.airline_name}}</li>
+            <li class="col s2">{{obj.depart_time}}</li>
+            <li class="col s2">{{obj.arrival_time}}</li>
+            <li class="col s2">{{obj.flight.duration}}</li>
+            <li class="col s2"></li>
+            <li class="col s2">{{obj.price}}</li>
+            <div class="clearfix"></div>
+          </ul> -->
+          <ul class="flight-detail">
+            <li ng-repeat="obj in flightDetails">
+              <div class="flight-offer">Get an wallet cashback upto Rs 1500. Use coupon: PAYLESS <a>Know more</a></div>
+              <div class="row flight-desc">
+                <div class="col s2">{{obj.flight.airline_name}}</div>
+                <div class="col s2">{{obj.depart_time}}</div>
+                <div class="col s2">{{obj.arrival_time}}</div>
+                <div class="col s2">{{obj.flight.duration}}</div>
+                <div class="col s2"></div>
+                <div class="col s2">&#8377; {{obj.price}}</div>
+                <div class="clearfix"></div>
+              </div>
+              <div class="row stop-desc">
+                <div class="col s2 offset-s2 location">BLR &rarr; DEL</div>
+                <div class="col s2 offset-s2">non-stop</div>
+                <div class="col s2 offset-s2">
+                   <button class="waves-effect waves-light bookBtn" type="button">Book</button>
+                </div>
+                <div class="clearfix"></div>
+              </div> 
+              <div class="row additional-info">
+                <div class="col s2 offset-s2"><a>Flight itinerary</a></div>
+                <div class="col s2"><a>Fare rules</a></div>
+                <div class="col s3"><a>Baggage information</a></div>
+                <div class="col s1 offset-s2"></div>
+                <div class="clearfix"></div>
+              </div>           
+            </li>
+          </ul>
+         
+        </div>
+        
+      </div>
+      <div class="col s2"></div>
+    </div>
+  </section>
+  <div class="clearfix"></div>
+</div>
+

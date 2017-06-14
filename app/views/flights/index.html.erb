@@ -1,0 +1,365 @@
+<div ng-controller="flightsController" ng-cloak>
+  <section class="navbar-section">
+    <div class="container">
+      <div class="row">
+        <div class="col s4">
+          <a href="#"><span class="cleartripLogo" title="Cleartrip ">Home</span></a>
+        </div>
+        <div class="col s5 center">
+          <span class="feedbackLink">
+            <a href="">Tell us what you think</a> of the Cleartrip experience
+          </span>
+        </div>
+        <div class="col s3 headerMenu">
+          <div class="col s5 currencyMenu">
+            <a href=""><strong>Currency</strong> INR <span class="chevron-down"></span></a>
+          </div>
+          <div class="col s3 countryMenu">
+            <a href="">in <span class="chevron-down"></span></a>
+          </div>
+          <div class="col s4 profileMenu">
+            <a href="">Your trips <span class="chevron-down"></span></a>
+          </div>
+      </div>
+    </div>
+  </section>
+  <div class="clearfix"></div>
+  <section id="home" class="container">
+    <form action="/flights/results" method="get" name="flightsForm">
+      <div class="row">
+        <div class="col s3 servicesMenu">
+          <ul class="products">
+            <li class="flightsApp"><a href=""><img src="/assets/flights(32x32).png"> Flights<span class="mdi-size"><i class="mdi mdi-chevron-right right"></i></span></a></li>
+            <li><a href=""><img src="/assets/hotel(48x48).png"> Hotels<span class="mdi-size"><i class="mdi mdi-chevron-right right"></i></span></a></li>
+            <li><a href=""><img src="/assets/activity(48x48).png"> Local<span class="mdi-size"><i class="mdi mdi-chevron-right right"></i></span></a></li>
+            <li><a href=""><img src="/assets/combo-box(48x48).png"> Flight + Hotel<span class="mdi-size"><i class="mdi mdi-chevron-right right"></i></span></a></li>
+            <li><a href=""><img src="/assets/trains(48x48).png"> Trains<span class="mdi-size"><i class="mdi mdi-chevron-right right"></i></span></a></li>
+            <li><a href=""><img src="/assets/deals(48x48).png"> Flight Deals<span class="mdi-size"><i class="mdi mdi-chevron-right right"></i></span></a></li>
+          </ul>
+          <ul class="accounts">
+            <li><a href=""><img src="/assets/mobile(48x48).png"> Mobile</a></li>
+            <li><a href=""><img src="/assets/luggage(48x48).png"> Manage trips</a></li>
+          </ul>
+        </div>
+        <div class="col s6 serviceContent">
+          <div class="service-header">
+           <h4>Search Flights</h4>
+           <h5 class="subTitle">Fly anywhere. Fly everywhere.</h5>
+          </div>
+          <div class="categories">
+            <ul>
+              <li>
+                <input name="tripCategory" type="radio" value="One way" class="with-gap" id="type1"/>
+                <label for="type1">One way</label>
+              </li>
+              <li>
+                <input name="tripCategory" type="radio" value="Round trip" class="with-gap" id="type2" />
+                <label for="type2">Round trip</label>
+              </li>
+              <li>
+                <input name="tripCategory" type="radio" value="Multi-city" class="with-gap" id="type3" />
+                <label for="type3">Multi-city</label>
+              </li>
+              <li>
+                <input name="tripCategory" type="radio" value="Flight + Hotel" class="with-gap" id="type4" />
+                <label for="type4">Flight + Hotel</label>
+              </li>
+            </ul>
+            <div class="clearfix"></div>
+          </div>
+          <div class="location">
+            <div class="input-field col s5 pad-r">
+              <label>From</label>
+              <input id="from" type="text" placeholder="Any worldwide city or airport" ng-model="data.fromLocation" name="fromLocation">
+            </div>
+            <div class="col s2 center">
+              <span class="mdi-size repeat-icon"><i class="mdi mdi-repeat"></i></span>
+            </div>
+            <div class="input-field col s5 pad-r">
+              <label>To</label>
+              <input id="to" type="text" placeholder="Any worldwide city or airport" ng-model="data.toLocation" name="toLocation">
+            </div>
+            <div class="clearfix"></div>
+          </div>
+          <div class="departure">
+            <!-- <div class="col s4 inner-addon right-addon">
+              <label>Depart on</label>
+              <i class="mdi mdi-calendar"></i>
+              <input type="date" class="datepicker" placeholder="Pick a date" ng-model=departDate>
+            </div> -->
+            <!-- <div class="col s4 input-field">
+              <label>Depart on</label>
+              <input type="text" ng-model="departDate">
+            </div> -->
+            <div class="col s4">
+              <label>Depart on</label>
+              <!-- <md-datepicker ng-model="departDate" name="departDate" md-open-on-focus></md-datepicker> -->
+
+              <input type="date" class="datepicker" ng-model="data.departDate" name="departDate">
+            </div>
+            <div class="clearfix"></div>
+          </div>
+          <div class="capacityDetails">
+            <div class=" col s4">
+            <label>Adults</label>
+              <md-input-container>
+                <md-select ng-model="data.adultCount" name="adultCount" aria-label="adults">
+                  <md-option ng-value=1>1</md-option>
+                  <md-option ng-value=2>2</md-option>
+                  <md-option ng-value=3>3</md-option>
+                  <md-option ng-value=4>4</md-option>
+                  <md-option ng-value=5>5</md-option>
+                  <md-option ng-value=6>6</md-option>
+                  <md-option ng-value=7>7</md-option>
+                  <md-option ng-value=8>8</md-option>
+                  <md-option ng-value=9>9</md-option>
+                </md-select>
+              </md-input-container>
+            </div>
+            <div class="col s4">
+              <label>Children</label>
+              <md-input-container>
+                  <md-select ng-model="data.childCount" name="childCount" aria-label="children">
+                    <md-option ng-value=0>0</md-option>
+                    <md-option ng-value=1>1</md-option>
+                    <md-option ng-value=2>2</md-option>
+                    <md-option ng-value=3>3</md-option>
+                    <md-option ng-value=4>4</md-option>
+                    <md-option ng-value=5>5</md-option>
+                    <md-option ng-value=6>6</md-option>
+                    <md-option ng-value=7>7</md-option>
+                    <md-option ng-value=8>8</md-option>
+                  </md-select>
+              </md-input-container>
+              <p>2-11 yrs</p>
+            </div>
+            <div class="col s4">
+            <label>Infants</label>
+              <md-input-container>
+                  <md-select ng-model="data.infantCount" name="infantCount" aria-label="infants">
+                    <md-option ng-value=0>0</md-option>
+                    <md-option ng-value=1>1</md-option>
+                  </md-select>
+                </md-input-container>
+              <p>Below 2 yrs</p>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+          <div class="moreOptions">
+            <span><i class="chevron-down"></i><a id="moreOptions">More Options: Class of travel, Airline preference</a></span>
+            <div class="advancedOptions">
+              <div class="input-field col s6">
+                <div>
+                  <label class="travelClass">Class of travel</label>
+                </div>
+                <md-input-container>
+                  <md-select ng-model="data.travelType" name="travelType" aria-label="class of travel">
+                    <md-option ng-repeat="travel in travels" ng-value=travel>{{travel}}</md-option>
+                  </md-select>
+                </md-input-container>
+              </div>
+              <div class="input-field col s6">
+                 <label>Preferred Airline</label>
+                <input type="text" placeholder="Airline name" ng-model="data.preferredAirline" name="preferredAirline">
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+          <div class="searchBtn right">
+            <button class="waves-effect waves-light btn" type="submit">Search flights</button>
+          </div>
+        </div>
+        <div class="col s3 deals-section">
+          <div class="card">
+            <div class="card-title">DEALS</div>
+            <div class="card-content">
+              <!-- <div class="carousel">
+                <div class="carousel-item">
+                  <a href="#one!"><strong title="Flights Special! ">Flights Special! </strong></a>
+                  <p class="offerDescription">
+                    Enjoy Upto Rs.3,000 cashback on Domestic Flight Bookings. 
+                    <br>
+                    Use coupon PAYLESS. 
+                  </p>
+                  <p class="offerLink"><a class="weak" href="">Know More →</a></p>
+                </div>
+                <div class="carousel-item">
+                  <a href="#two!"><strong title="Super Savings on Hotel!">Super Savings on Hotel!</strong></a>
+                  <p class="offerDescription">
+                    Avail upto Rs.13,000 cashback on Domestic Hotels.   
+                    <br>
+                    Use coupon HOTELDEALS.  
+                  </p>
+                  <p class="offerLink"><a class="weak" href="">Know More →</a></p>
+                </div>
+                <div class="carousel-item">
+                  <a href="#three!"><strong title="Cleartrip Local! ">Cleartrip Local! </strong></a>
+                  <p class="offerDescription">
+                    Explore Activities, Dining &amp; Events on Cleartrip Local &amp; get upto 25% cashback.  
+                    <br>
+                    Book online or download the Cleartrip Mobile App now. 
+                  </p>
+                  <p class="offerLink"><a class="weak" href="">Know More →</a></p>
+                </div>
+                <div class="carousel-item">
+                  <a href="#four!"><strong title="MobiKwik Exclusive! ">MobiKwik Exclusive! </strong></a>
+                  <p class="offerDescription">
+                    Grab 10% cashback (Max Rs 250) on Flights, Hotels &amp; Local Experiences.  
+                    <br>
+                    Hurry, limited period offer.  
+                  </p>
+                  <p class="offerLink"><a class="weak" href="">Know More →</a></p>
+                </div>
+                <div class="carousel-item">
+                  <a href="#five!"><strong title="International Flights Offer! ">International Flights Offer! </strong></a>
+                  <p class="offerDescription">
+                    Avail up to Rs.20,000 instant cashback when you book an International flight. Use coupon CTSALE. 
+                    <br>
+                    Hurry, limited period offer! 
+                  </p>
+                  <p class="offerLink"><a class="weak" href="">Know More →</a></p>
+                </div>
+              </div> -->
+              <div class="slider">
+                <ul class="slides">  
+                  <li>
+                    <a href=""><strong title="Flights Special! ">Flights Special! </strong></a>
+                    <p class="offerDescription">
+                      Enjoy Upto Rs.3,000 cashback on Domestic Flight Bookings. 
+                      <br>
+                      Use coupon PAYLESS. 
+                    </p>
+                    <p class="offerLink"><a class="weak" href="">Know More →</a></p>
+                  </li>
+                  <li>
+                    <a href=""><strong title="Super Savings on Hotel!">Super Savings on Hotel!</strong></a>
+                    <p class="offerDescription">
+                      Avail upto Rs.13,000 cashback on Domestic Hotels.   
+                      <br>
+                      Use coupon HOTELDEALS.  
+                    </p>
+                    <p class="offerLink"><a class="weak" href="">Know More →</a></p>
+                  </li>
+                  <li>
+                    <a href=""><strong title="Cleartrip Local! ">Cleartrip Local! </strong></a>
+                    <p class="offerDescription">
+                      Explore Activities, Dining &amp; Events on Cleartrip Local &amp; get upto 25% cashback.  
+                      <br>
+                      Book online or download the Cleartrip Mobile App now. 
+                    </p>
+                    <p class="offerLink"><a class="weak" href="">Know More →</a></p>
+                  </li>
+                  <li>
+                    <a href=""><strong title="MobiKwik Exclusive! ">MobiKwik Exclusive! </strong></a>
+                    <p class="offerDescription">
+                      Grab 10% cashback (Max Rs 250) on Flights, Hotels &amp; Local Experiences.  
+                      <br>
+                      Hurry, limited period offer.  
+                    </p>
+                    <p class="offerLink"><a class="weak" href="">Know More →</a></p>
+                  </li>
+                  <li>
+                    <a href=""><strong title="International Flights Offer! ">International Flights Offer! </strong></a>
+                    <p class="offerDescription">
+                      Avail up to Rs.20,000 instant cashback when you book an International flight. Use coupon CTSALE. 
+                      <br>
+                      Hurry, limited period offer! 
+                    </p>
+                    <p class="offerLink"><a class="weak" href="">Know More →</a></p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </section>
+  <div class="clearfix"></div>
+  <!-- <section class="rewardsUpsellBannerHome" id="homeUpsellBanner" style="">
+    <div class="container content">
+      <div class="rewardsUpsellWrapperHome upsellMin980">
+        <div class="rewardsBannerImage"><img src="/assets/rewards_logo.png"></div>
+        <div class="upsellTextContainer">
+          <h4>Keep booking to get free travel and stay.
+          <small>No forms. No registrations. No sweat. <a href="/rewards" target="_blank">Know more</a></small></h4>  
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </section> -->
+  <section class="rewardsUpsellBannerHome" id="homeUpsellBanner" style="">
+    <div class="container content">
+      <div class="row rewardsUpsellWrapperHome">
+        <div class="col s3 offset-s2 pad0">
+          <div class="rewardsBannerImage"><img src="/assets/rewards_logo.png"></div>
+        </div>
+        <div class="col s7">
+          <div class="upsellTextContainer">
+            <h4>Keep booking to get free travel and stay.
+            <small>No forms. No registrations. No sweat. <a href="/rewards" target="_blank">Know more</a></small></h4>  
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </section>
+  <div class="clearfix"></div>
+  <footer class="cleartripFooter">
+    <div class="container description">
+      <div class="row">
+        <div class="col s10">
+          <ul>
+            <li><a href="">About Us</a></li>
+            <li><a href="">Careers</a></li>
+            <li><a href="">FAQs</a></li>
+            <li><a href="">Support</a></li>
+            <li><a href="">Blog</a></li>
+            <li><a href="">Cleartrip for Business</a></li>
+            <li><a href="">Mobile</a></li>
+            <li><a href="">Gift Cards</a></li>
+            <li><a href="">Collections</a></li>
+            <li><a href="">Hotel directory</a></li>
+            <li><a href="">Referral Program</a></li>
+          </ul>
+        </div>
+        <div class="col s2">
+          <ul class="socialNetwork right">
+            <li><a>Connect</a></li>
+            <li class="facebook"><a href=""><i class="mdi mdi-facebook-box"></i></a></li>
+            <li class="twitter"><a href=""><i class="mdi mdi-twitter"></i></a></li>
+          </ul>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+    <div class="container copyright">
+      <ul>
+        <li><a>&copy; 2006-2017 Cleartrip Pvt. Ltd.</a></li>
+        <li><a href="">Privacy</a></li>
+        <li><a href="">Security</a></li>
+        <li><a href="">Terms of Use</a></li>
+      </ul>
+    </div>
+    <div class="clearfix"></div>
+    <div class="container otherTools">
+      <ul class="secondaryLinks weaker">
+        <li><strong>Other tools:</strong></li>
+        <li class="first"><a href="" title="Flight Booking" class="forceHttp">Cheap air tickets</a></li>
+        <li><a href="" title="Book cheap flights for travel within India and abroad" class="forceHttp">Flight tickets</a></li>
+        <li><a href="" title="Flight Status India" class="forceHttp">Flight Status</a></li>
+        <li><a title="India Hotels" href="" class="forceHttp">India Hotels</a></li>
+        <li><a title="IRCTC Trains Reservation" href="" class="forceHttp">IRCTC Railway Reservation</a></li>
+        <li><a title="Indian Railways PNR Status" href="" class="forceHttp">Indian Railways PNR Status</a></li>
+        <li><a href="" title="Domestic Air Tickets" class="forceHttp">Cheap Domestic Air Tickets</a></li>
+        <li><a title="Domestic Flight Schedules" href="" class="forceHttp">Domestic Flights </a></li>
+        <li><a title="Domestic Airlines in India" href="" class="forceHttp">Domestic Airlines in India</a></li>
+        <li><a href="" title="International Air Tickets" class="forceHttp">International Air Tickets</a></li>      
+        <li class="first"><a title="International Flight Schedules" href="" class="forceHttp">International Flights </a></li>
+        <li><a title="International Airlines" href="" class="forceHttp">International Airlines</a></li>
+        <li><a href="" title="Travel guides for destinations and places around the world" class="forceHttp">Travel guide</a></li>
+        <li><a class="forceHttp" title="Flight plus Hotel Packages" href="">Holiday Packages</a></li>
+      </ul>
+    </div>
+  </footer>
+</div>
